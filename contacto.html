@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacte | Ethos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="contacto.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav id="navbar">
+            <a href="index.html" class="logo">Ethos</a>
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="index.html#articulos">Posts</a></li>
+                <li><a href="#sobre-nosotros">Qui som?</a></li>
+                <li><a href="contacto.html" class="btn-contacto">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="post-page">
+        <article class="article-content">
+            <header class="post-header">
+                <h1>Contacta amb nosaltres</h1>
+                <p class="post-meta">Envieu-nos un missatge i us respondrem al més aviat possible.</p>
+            </header>
+
+            <section class="post-body">
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/llucantensvintimilla@insperecalders.cat" method="POST">
+                    <h2>Formulari de Contacte</h2>
+                    
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" placeholder="El teu nom" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="El teu email" required>
+
+                    <label for="message">Missatge</label>
+                    <textarea id="message" name="message" rows="6" placeholder="El teu missatge" required></textarea>
+
+                    <!-- Desactivar captcha -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Redirigir después del envío -->
+                    <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+                    
+                    <button type="submit">Enviar</button>
+
+                    <div class="contact-feedback" id="feedback"></div>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ethos | Un Blog d'Ética. Tots els drets reservats.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="contacto.js"></script>
+</body>
+</html>
