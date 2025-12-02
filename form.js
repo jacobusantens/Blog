@@ -1,4 +1,4 @@
-        // JS para mostrar feedback de envío
+// JS para mostrar feedback de envío
         const form = document.getElementById('contactForm');
         const feedback = document.getElementById('feedback');
 
