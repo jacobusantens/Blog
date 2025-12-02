@@ -1,0 +1,402 @@
+        /* Variables de Color para la paleta elegante */
+        :root {
+            --color-primary: #1a1a1a; /* Texto principal y fondo de footer */
+            --color-secondary: #f0f0f0; /* Fondo principal claro */
+            --color-accent: #B8860B; /* Color Cobre/Dorado para acentos */
+            --color-text-light: #555555; /* Texto secundario gris */
+            --color-border: #cccccc; /* Líneas divisorias */
+
+            --transition-speed: 0.4s; /* Velocidad base de transición */
+        }
+
+        /* Base y Tipografía */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            transition: background-color var(--transition-speed) ease;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* El h2 general se ha movido al sub-heading para mayor especificidad */
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0; /* Ajustado para mejor control de .post-page */
+            text-align: center;
+        }
+
+        .post-page {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            max-width: 1000px; /* Ancho cómodo para lectura */
+            margin: 0 auto;
+            background-color: white; /* Fondo blanco puro para el cuerpo del texto */
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+            border-radius: 5px;
+            text-align: left; /* Asegura que el contenido del post no esté centrado */
+        }
+
+        .article-content {
+            padding: 0 5%;
+        }
+
+        /* 1. Encabezado del Artículo */
+        .post-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .post-header h1 {
+            font-size: 3.5rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .post-meta {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            font-weight: 300;
+        }
+
+        .post-meta span {
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        /* 2. Imagen Destacada */
+        .post-featured-image {
+            margin: 3rem 0;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-featured-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .post-featured-image figcaption {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            padding: 0.5rem 1rem;
+            text-align: right;
+            background-color: var(--color-secondary);
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* 3. Cuerpo del Texto */
+        .post-body {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-primary);
+        }
+
+        .post-body h3 {
+            font-size: 2rem;
+            margin-top: 2.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted var(--color-border);
+            color: var(--color-primary);
+        }
+
+        .post-body h4 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: var(--color-accent);
+        }
+
+        .post-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Estilo para citas (blockquote) */
+        .post-body blockquote {
+            border-left: 5px solid var(--color-accent);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+            font-size: 1.2rem;
+        }
+
+        /* Estilo para listas */
+        .post-body ul {
+            margin: 1.5rem 0 1.5rem 2rem;
+            list-style-type: disc; /* Cambiado a disc para un look más clásico, pero square es válido */
+            color: var(--color-accent);
+        }
+
+        .post-body ul li {
+            margin-bottom: 0.5rem;
+            color: var(--color-primary); /* Texto de la lista */
+            list-style-type: initial; /* Permite que el color del ul actúe sobre el marcador */
+        }
+        
+        .post-body ul li::marker {
+            color: var(--color-accent);
+        }
+
+        /* 4. Caja del Autor (Author Box) - Elegancia con acento */
+        .author-box {
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            border: 1px solid var(--color-accent);
+            background-color: var(--color-secondary);
+            border-radius: 5px;
+            margin-top: 3rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .author-box:hover {
+            box-shadow: 0 5px 20px rgba(184, 134, 11, 0.2);
+        }
+
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1.5rem;
+            border: 3px solid var(--color-accent);
+            flex-shrink: 0; /* Evita que la imagen se comprima en flexbox */
+        }
+
+        .author-info h4 {
+            margin-top: 0;
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif; /* Mantener la consistencia de títulos */
+        }
+
+        .author-info p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .author-link {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .author-link:hover {
+            color: var(--color-primary);
+        }
+
+        /* 5. Artículos Relacionados */
+        #related-posts {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            text-align: center;
+        }
+
+        .sub-heading {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            border-bottom: 2px solid var(--color-accent); /* Borde de acento más grueso */
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-item {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-item a {
+            display: block;
+            padding: 1rem;
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--color-primary);
+            transition: color 0.3s ease;
+        }
+
+        .related-item a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Navegación (Navbar) y Cabecera */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            /* Se recomienda usar una clase para la transición JS (scroll) */
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            text-decoration: none; /* Asegurar que el logo no tenga subrayado si es un link */
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: var(--color-text-light);
+            padding: 0.5rem 1rem;
+            font-weight: 400;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        /* Efecto de línea sutil al pasar el ratón */
+        #navbar ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        #navbar ul li a:hover {
+            color: var(--color-accent);
+        }
+
+        #navbar ul li a:hover::after {
+            width: 80%;
+        }
+
+        .btn-contacto {
+            background-color: var(--color-accent);
+            color: white !important; /* Sobrescribir el color de link normal */
+            padding: 0.5rem 1.5rem !important;
+            border-radius: 5px;
+            font-weight: 700 !important;
+            margin-left: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-contacto:hover {
+             background-color: #a3750a; /* Tono más oscuro de acento */
+             color: white !important;
+        }
+        
+        /* Quitar el efecto hover de línea en el botón */
+        .btn-contacto::after {
+            content: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--color-primary);
+            color: #aaaaaa; /* Ligeramente más claro que color-text-light para contraste */
+            font-size: 0.9rem;
+            /* La línea de borde se ha eliminado para que el footer sea una sección sólida */
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: 3rem 0;
+        }
+
+        /* Responsive para el cuerpo del post */
+        @media (max-width: 768px) {
+            #navbar {
+                flex-direction: column;
+                padding-bottom: 1rem;
+            }
+            #navbar ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #navbar ul li {
+                margin: 0.5rem 0;
+            }
+            .post-page {
+                padding-left: 0;
+                padding-right: 0;
+                max-width: 100%;
+                box-shadow: none;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            .post-header h1 {
+                font-size: 2.5rem;
+            }
+            .post-body {
+                font-size: 1rem;
+            }
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .author-avatar {
+                margin: 0 0 1rem 0;
+            }
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }

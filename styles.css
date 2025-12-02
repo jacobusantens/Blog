@@ -1,0 +1,340 @@
+/* Variables de Color para la paleta elegante */
+:root {
+    --color-primary: #1a1a1a; /* Texto principal y fondo de footer */
+    --color-secondary: #f0f0f0; /* Fondo principal claro */
+    --color-accent: #B8860B; /* Color Cobre/Dorado para acentos */
+    --color-text-light: #555555; /* Texto secundario gris */
+    --color-border: #cccccc; /* Líneas divisorias */
+
+    --transition-speed: 0.4s; /* Velocidad base de transición */
+}
+
+/* Base y Tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    transition: background-color var(--transition-speed) ease;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    padding: 3rem 0 1rem;
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+    margin: 0 auto 4rem;
+    width: 90%;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* 1. Navegación (Navbar) y Cabecera */
+header {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    transition: all 0.3s ease-in-out; /* Transición JS (scroll) */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Transición mejorada para enlaces de navegación */
+#navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+#navbar ul li a:hover {
+    color: var(--color-primary);
+}
+
+#navbar ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Estilo y hover del botón principal de contacto */
+.btn-contacto {
+    background-color: var(--color-primary);
+    color: white !important;
+    border-radius: 5px;
+    padding: 0.6rem 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 1.5rem;
+}
+
+.btn-contacto:hover {
+    background-color: var(--color-accent); /* Cambia al color de acento al hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(184, 134, 11, 0.4);
+}
+
+/* 2. Sección Hero */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/picsum/200/300') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin-bottom: 4rem;
+    border-bottom: 5px solid var(--color-accent);
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* Estilo y hover del botón principal de acción */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: white;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 2px solid var(--color-accent);
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out, border-color 0.4s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: transparent; /* Fondo transparente */
+    color: var(--color-accent); /* Mantiene el color del texto */
+    transform: translateY(-3px) scale(1.05);
+    border-color: white; /* Borde blanco para contraste */
+}
+
+/* 3. Estilo de los Artículos (Tarjetas de Blog) - Transiciones Estéticas */
+.blog-post {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 4rem;
+    text-align: left;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efecto Hover Sobrio y Elegante */
+.blog-post:hover {
+    transform: translateY(-12px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border: 1px solid var(--color-accent); /* Borde de acento sutil al hover */
+}
+
+.blog-post.reversed {
+    flex-direction: row-reverse;
+}
+
+.post-image {
+    flex: 1;
+    min-width: 40%;
+    overflow: hidden;
+}
+
+/* Efecto de Zoom y Desenfoque al Hover de la Imagen */
+.post-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%); /* Empieza con un filtro de gris */
+    transition: transform 0.6s ease-out, filter 0.6s ease-out;
+}
+
+.blog-post:hover .post-image img {
+    transform: scale(1.1); /* Zoom más pronunciado */
+    filter: grayscale(0%); /* Vuelve al color completo */
+}
+
+.post-content {
+    flex: 2;
+    padding: 3rem;
+    min-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-content h3 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    color: var(--color-primary);
+}
+
+.post-content .excerpt {
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+}
+
+/* Enlace "Leer Más" con transición de color y movimiento */
+.read-more {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    color: var(--color-accent);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--color-primary); /* Cambia a negro al hover */
+    transform: translateX(5px);
+}
+
+.read-more::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease-out;
+}
+
+.read-more:hover::after {
+    width: 0; /* Desaparece el subrayado al hover */
+}
+
+/* 4. Sección Sobre Nosotros y Pie de Página */
+.color-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: var(--color-primary);
+    color: white;
+    margin-top: 4rem;
+}
+
+.color-section h3 {
+    color: var(--color-accent);
+    font-size: 2.4rem;
+}
+
+.color-section p {
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--color-text-light);
+}
+
+/* 5. Animaciones (Para usar con JS) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0; 
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1s; }
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* 6. Responsive Design */
+@media (max-width: 900px) {
+    .blog-post {
+        flex-direction: column !important; 
+    }
+    .post-content, .post-image {
+        min-width: 100%;
+    }
+    .post-content {
+        padding: 2rem;
+    }
+    .post-image {
+        max-height: 250px;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
