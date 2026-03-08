@@ -338,3 +338,26 @@ footer {
         font-size: 3rem;
     }
 }
+
+/* FECHA ARTICLE */
+
+.post-content{
+    position: relative;
+}
+
+.fecha-article{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #777;
+    font-style: italic;
+    
+    background-color: #f5f5f5;
+    padding: 4px 10px;
+    border-radius: 8px;
+    
+    margin: 0;
+}
