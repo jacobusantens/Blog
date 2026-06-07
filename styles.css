@@ -361,3 +361,106 @@ footer {
     
     margin: 0;
 }
+
+/* CSS videos */
+
+.post-featured-image {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+  }
+  
+  /* La portada del vídeo es comporta com les imatges: gris i amb zoom al hover */
+  .video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Els mateixos efectes que tenen les imatges normals */
+    filter: grayscale(80%);
+    transition: transform 0.6s ease-out, filter 0.6s ease-out;
+  }
+  
+  /* Quan el .blog-post sencer fa hover, la portada del vídeo fa zoom i es torna a color */
+  .blog-post:hover .video-thumbnail img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+  
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 35px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding-left: 5px;
+    pointer-events: auto; /* Assegura que el botó rep els clics */
+  }
+  
+  /* Efecte hover del botó */
+  .play-button:hover {
+    background-color: #ff0000;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  
+  /* Quan l'article fa hover, el botó també s'escala una mica */
+  .blog-post:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  
+  /* Contenidor de l'iframe - inicialment buit */
+  .video-iframe-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 10;
+  }
+  
+  .video-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* FIGCAPTION a la dreta */
+  .post-featured-image figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+    font-style: italic;
+    width: 100%;
+    display: block;
+  }

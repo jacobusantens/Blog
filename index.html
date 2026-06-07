@@ -104,6 +104,26 @@
             </div>
         </article>
 
+        <article class="blog-post">
+            <div class="post-image">
+                <figure class="post-featured-image">
+                    <div class="video-wrapper" id="videoContainer">
+                        <div class="video-thumbnail" id="videoThumbnail">
+                            <img src="https://img.youtube.com/vi/X3-hOigoxHs/maxresdefault.jpg" alt="Portada del vídeo">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-iframe-container" id="videoIframeContainer"></div>
+                    </div>
+                </figure>
+            </div>
+            <div class="post-content">
+                <h3><i>The Big Bang Theory</i>: quan el masclisme es disfressa de “tendre”</h3>
+                <p class="excerpt"><i>The Big Bang Theory</i> no és tan innocent com sembla. Aquí t'explico per què.</p>
+                <a href="post7.html" class="read-more">Llegir més →</a>
+                <p class="fecha-article">01.06.2026</p>
+            </div>
+        </article>
+
         <!--
 
         <article class="blog-post reversed">
@@ -175,5 +195,61 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+  // Esperem que la pàgina estigui completament carregada
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('JavaScript carregat - Preparant vídeo');
+    
+    // Busquem els elements
+    var thumbnail = document.getElementById('videoThumbnail');
+    var container = document.getElementById('videoIframeContainer');
+    
+    // Comprovem que existeixen
+    if (thumbnail && container) {
+      console.log('Elements trobats: thumbnail i container');
+      
+      // Funció que reprodueix el vídeo
+      function reproduirVideo(event) {
+        // Evitem que el clic es propagui a altres elements
+        if (event) {
+          event.stopPropagation();
+        }
+        
+        console.log('Clic al vídeo! Reproduint...');
+        
+        // Creem l'iframe
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/X3-hOigoxHs?autoplay=1&mute=1&rel=0';
+        iframe.title = 'The Adorkable Misogyny of The Big Bang Theory';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        
+        // Afegim l'iframe al container
+        container.appendChild(iframe);
+        
+        // Amaguem la portada i mostrem el container
+        thumbnail.style.display = 'none';
+        container.style.display = 'block';
+      }
+      
+      // Quan es faci clic a la portada sencera
+      thumbnail.addEventListener('click', reproduirVideo);
+      
+      // També capturem el clic al botó de play (per si de cas)
+      var playButton = thumbnail.querySelector('.play-button');
+      if (playButton) {
+        playButton.addEventListener('click', reproduirVideo);
+      }
+      
+    } else {
+      console.log('ERROR: No s\'han trobat els elements. Comprova els IDs.');
+      console.log('thumbnail:', thumbnail);
+      console.log('container:', container);
+    }
+  });
+      </script>
 </body>
 </html>

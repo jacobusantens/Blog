@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethos | El dilema del presoner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght=300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+
+    <header>
+        <nav id="navbar">
+            <a href="index.html" class="logo">Ethos</a>
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="index.html#articulos">Posts</a></li>
+                <li><a href="index.html#sobre-nosotros">Qui som?</a></li>
+                <li><a href="contacto.html" class="btn-contacto">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="post-page">
+        
+        <article class="article-content">
+            
+            <header class="post-header">
+                <h1><i>The Big Bang Theory</i>: quan el masclisme es disfressa de “tendre”</h1>
+                <p class="post-meta">Publicat l'1 de juny de 2026 per Lluc Antens Vintimilla | <span>Ethos</span></p>
+            </header>
+
+            <figure class="post-featured-image">
+                <div class="video-wrapper" id="videoContainer">
+                  <div class="video-thumbnail" id="videoThumbnail">
+                    <img src="https://img.youtube.com/vi/X3-hOigoxHs/maxresdefault.jpg" alt="Portada del vídeo">
+                    <div class="play-button">▶</div>
+                  </div>
+                  <div class="video-iframe-container" id="videoIframeContainer"></div>
+                </div>
+                <figcaption>Vídeo que vam veure a classe: "The Adorkable Misogyny of The Big Bang Theory"</figcaption>
+              </figure>
+
+            <section class="post-body">
+                
+            <p>
+                L’altre dia a classe de filosofia vam veure un vídeo que es deia “<i>The Adorkable Misogyny of The Big Bang Theory</i>”. Explicava que la sèrie utilitza un tipus de personatge que l’autor anomena “<i>adorkable misogynist</i>”, que seria un home nerd, tímid i socialment poc hàbil, però que en realitat té conductes masclistes. Com que justament fa poc m’he començat a veure aquesta sèrie i vaig per la segona temporada, el vídeo em va fer obrir els ulls. Avui vull reflexionar sobre el masclisme de cada personatge i per què n’hi ha un que em cau especialment malament. <br><br>
+
+                Segons el vídeo, el problema de <i>The Big Bang Theory</i> no és només que els personatges mascles tinguin actituds masclistes, sinó que la sèrie les presenta com a “tendres” o “gracioses". Així, l’espectador acaba normalitzant comportaments que a la vida real serien molt preocupants. Vegem-ho amb exemples. <br><br>
+                
+                <b>Howard Wolowitz</b> és el cas més evident. Fa comentaris sexuals constants, assetja la Penny i la tracta com un objecte. El vídeo explica que la sèrie disfressa això de “friki desesperat” per fer riure. Però a mi, personalment, <b>l’Howard em cau molt malament i em fa fàstic</b>. No puc veure’l com a “tendre” quan es passa el dia fent bromes brutes i sense respectar els límits de les dones. <br><br>
+                
+                <b>Sheldon Cooper</b> practica un masclisme intel·lectual. Menysprea la Penny perquè no és tan culta com ell en ciència, i sempre li recorda que és “poc intel·ligent”. El vídeo diu que aquesta actitud de superioritat també és masclista, perquè dona a entendre que els temes seriosos són per a homes i les ximpleries (com la moda o les relacions) per a dones. <br><br>
+                
+                <b>Leonard Hofstadter</b>, en canvi, és el que el vídeo anomena “el bon noi”. Però també té conductes problemàtiques: pressiona emocionalment la Penny, la idealitza i de vegades actua de manera paternalista. És un masclisme més suau, però igualment real. <br><br>
+                
+                <b>Rajesh Koothrappali</b> té un altre problema: no pot parlar amb dones a menys que begui. El vídeo argumenta que això també és una forma de masclisme, perquè tracta les dones com éssers diferents i inabastables, en lloc de persones normals. <br><br>
+                
+                En conclusió, després de veure el vídeo a classe i reflexionar-hi, he entès per què em sentia incòmoda amb algunes bromes de la sèrie. M’agrada <i>The Big Bang Theory</i> per altres coses, però no puc ignorar que normalitza actituds masclistes sota l’excusa de la “tendresa”. I tu, també ho havies notat? <br><br>
+            </p>
+                
+            </section>
+            
+            <hr>
+
+            <aside class="author-box">
+                
+                <img src="img/perfil.jpg" alt="foto" class="author-avatar">
+                <div class="author-info">
+                    <h4>Lluc Antens Vintimilla</h4>
+                    <p>Estudiant</p>
+                    <a href="index.html#articulos" class="author-link">Veure més publicacions de l'autor &rarr;</a>
+                </div>
+            </aside>
+            
+        </article>
+
+    </main>
+
+    <section id="related-posts">
+        <h2 class="sub-heading">Publicacions Relacionades:</h2>
+        <div class="related-grid">
+            <div class="related-item">
+                <img src="img/blackmirror.jfif" alt="foto">
+                <a href="post2.html">Dilema ètic a Black Mirror</a>
+            </div>
+            <div class="related-item">
+                <img src="img/bo-dolent.jfif" alt="foto">
+                <a href="post5.html">Reflexió: res és totalment bo ni dolent</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ethos | Un Blog d'Ética. Tots els drets reservats.</p>
+    </footer>
+
+    <script src="posts.js"></script>
+    <script>
+        document.getElementById('videoThumbnail').onclick = function() {
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube.com/embed/X3-hOigoxHs?autoplay=1&mute=1&rel=0';
+          iframe.title = 'The Adorkable Misogyny of The Big Bang Theory';
+          iframe.width = '100%';
+          iframe.height = '100%';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          
+          document.getElementById('videoIframeContainer').appendChild(iframe);
+          document.getElementById('videoThumbnail').style.display = 'none';
+          document.getElementById('videoIframeContainer').style.display = 'block';
+        };
+      </script>
+    </body>
+</html>
