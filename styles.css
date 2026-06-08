@@ -138,13 +138,13 @@ header {
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
     color: white;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
-    font-size: 1.6rem;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
     margin-bottom: 2.5rem;
     font-weight: 300;
 }
@@ -329,15 +329,92 @@ footer {
         min-width: 100%;
     }
     .post-content {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
     }
     .post-image {
         max-height: 250px;
+    }
+    .post-image:has(.video-wrapper) {
+        max-height: none !important;
+    }
+    .video-wrapper {
+        aspect-ratio: 16 / 9;
+        height: auto;
     }
     .hero-content h1 {
         font-size: 3rem;
     }
 }
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column !important;
+        padding: 0.8rem 1rem !important;
+        gap: 0.8rem;
+    }
+    #navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.2rem;
+    }
+    #navbar ul li a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.95rem;
+    }
+    .btn-contacto {
+        margin-left: 0.5rem !important;
+        padding: 0.4rem 1rem !important;
+    }
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+        padding: 2rem 0 0.8rem;
+    }
+    main {
+        padding: 1.5rem 1rem;
+    }
+    .blog-post {
+        margin-bottom: 2.5rem;
+    }
+    .post-content h3 {
+        font-size: 1.6rem;
+    }
+    .color-section {
+        padding: 3.5rem 1.5rem;
+        margin-top: 2.5rem;
+    }
+    .color-section h3 {
+        font-size: 2rem;
+    }
+    .color-section p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+    .hero-content p {
+        font-size: 1.1rem !important;
+        margin-bottom: 1.8rem;
+    }
+    .btn-primary {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+    }
+    .post-content {
+        padding: 1.5rem 1.2rem 2.5rem; /* Espacio extra para la fecha absoluta */
+    }
+    .post-content h3 {
+        font-size: 1.4rem;
+    }
+    .fecha-article {
+        font-size: 0.8rem;
+        padding: 2px 6px;
+    }
+}
+
 
 /* FECHA ARTICLE */
 
